@@ -1,0 +1,27 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches:
+      - examen-parcial-1
+
+jobs:
+  unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run unit tests
+      run: npm test
+
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: unit-test-results
+        path: unit_test_results.pdf
