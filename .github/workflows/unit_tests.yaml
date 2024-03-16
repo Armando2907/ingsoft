@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - examen-parcial-1
-
+      
 jobs:
   unit-tests:
     name: Run Unit Tests
